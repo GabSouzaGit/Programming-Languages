@@ -7,6 +7,7 @@
 
 :root {
     --corPreta: black;
+    --corTurquesa: hsl(170, 100%, 40%);
     --placeholder: red;
 }
 
@@ -29,18 +30,35 @@ footer {
     grid-area: f;
     background: var(--corPreta);
     text-align: center;
+    height: 100%;
+    padding: 50px 0px;
 }
 
 main {
-    width: 100%;
+    max-width: 100%;
+    margin: 20px;
+}
+
+ion-icon {
+    font-size: 38px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+ion-icon:hover {
+    transition: 0.5s;
+    color: var(--corTurquesa);  
 }
 
 /* #ID's */
 #principal {
     display: grid;
-    grid-template-rows: 20vh 100vh;
+    grid-template-rows: 20vh 100vh 50vh;
     grid-template-areas: "h"
-                         "c";
+                         "c"
+                         "f";
 }
 
 #content {
@@ -51,8 +69,38 @@ main {
     display: flex;
     flex-wrap: wrap; 
     height: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+#footerContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: "c desc"
+                         "n n";
+    align-items: center;
+    justify-items: center;
+}
+
+#notaEsclarecimento {
+    grid-area: n;
+}
+
+#contacts {
+    grid-area: c;
+}
+
+#description {
+    grid-area: desc;
+    width: 70%;
+}
+
+#line {
+    height: 1px;
+    width: 100%;
+    background: white;
+    margin-top: 30px;
 }
 
 /* .Classes */
@@ -79,7 +127,33 @@ main {
 /* Responsividade */
 
 @media only screen and (max-width: 600px){
+    #cards {
+        justify-content: center;
+    }
+
     .card {
         margin: 10px;
     }
+
+
+
+    #footerContent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50vh 50vh 50vh;
+        grid-template-areas: "c c"
+                             "desc desc"
+                             "n n";
+        align-items: center;
+        justify-items: center;
+    }
+
+    #principal {
+        display: grid;
+        grid-template-rows: 20vh 100vh 50vh;
+        grid-template-areas: "h"
+                             "c"
+                             "f";
+    }
+    
 }
