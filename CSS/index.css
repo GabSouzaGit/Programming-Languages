@@ -107,7 +107,7 @@ ion-icon:hover {
 
 .card {
     padding: 20px;
-    height: 60%;
+    height: 460px;
     width: 310px;
     max-width: 320px;
     margin: 10px;
@@ -150,7 +150,7 @@ ion-icon:hover {
 
     #principal {
         display: grid;
-        grid-template-rows: 20vh 100vh 50vh;
+        grid-template-rows: 20vh 200vh 50vh;
         grid-template-areas: "h"
                              "c"
                              "f";
